@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+	crossorigin="anonymous">
+</head>
+<body>
+	
+
+	<div class="jumbotron">
+		<h1 id="welcome">You are Logged in!</h1>
+		
+		<a class="btn btn success" onclick="logout()">Logout</a>
+		
+	</div>
+
+	<div class="container-fluid">
+	
+		<div>To submit a reimbursement request, enter the information below:</div>
+
+		<form name="newReimbursementRequest" onsubmit="submitRequest(event.preventDefault())">
+
+			<div class="form-group">
+				<label for="reimbAmount">AMOUNT</label>
+
+				<input type="number" class="form-control" name="amount" id="reimbAmount"
+					placeholder="Enter The Amount">
+			</div>
+
+			<div class="form-group">
+				<label for="reimbDescription">DESCRIPTION</label>
+
+				<input type="text" class="form-control" name="reimbDescription"
+					id="reimbDescription" placeholder="Please enter a description for the reimbursement">
+			</div>
+			
+			<div class="form-group">
+                    <label for="hear-about">What type of reimbursement are you requesting?</label>
+                    <select name="typeId" id="reimbType">
+                        <option value= 1>Please make a selection</option>
+                        <option value= 1>Lodging</option>
+                        <option value= 2>Travel</option>
+                        <option value= 3>Food</option>
+                        <option value= 4>Other</option>
+                    </select>
+                </div>
+			
+			
+			<div id="warningText"></div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+		</form>
+
+	</div>
+
+	<div>
+		<p>Click here to view and/or update your personal information:</p>
+		<input id="clickMe" type="button" value="Employee Info Page"
+			onclick="employeeInfo();" /> <br />
+	</div>
+
+	<div>
+		<p>Click here to view your reimbursements:</p>
+		<input id="clickMe" type="button" value="Employee Reimbursements"
+			onclick="employeeReimbursements();" /> <br />
+	</div>
+	
+	<script>
+
+	let welcome = document.getElementById('welcome');
+
+	let userString = sessionStorage.getItem('currentUser');
+	
+	if (userString === null) {
+		window.location = "http://localhost:8080/project-1/";
+	} else {
+		
+		//let currentUser = JSON.parse(userString); 
+		//console.log(currentUser);
+		//console.log(currentUser.firstName);
+		//console.log(currentUser.lastName);
+		
+		//if (currentUser != null) {
+			
+			var myUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+			console.log(myUser);
+
+			welcome.innerHTML = "Welcome Employee" + myUser.username;
+			
+		//}
+		
+	}
+
+	
+	function logout() {
+		
+		let xhr = new XMLHttpRequest();
+		
+		xhr.open("POST", "http://localhost:8080/project-1/logout");
+		xhr.send();
+		
+		sessionStorage.removeItem('currentUser');
+		window.location = "http://localhost:8080/project-1/";
+		
+	}
+
+
+	</script>
+	
+	<script src="scripts/index.js"></script>
+
+</body>
+</html>

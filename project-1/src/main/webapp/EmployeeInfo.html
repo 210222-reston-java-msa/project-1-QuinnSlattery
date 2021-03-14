@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Info</title>
+    <style></style> <!-- This would be internal styling -->
+</head>
+<body>
+
+    
+    
+    <main>
+        <h1>Your Information</h1>
+
+        <table style="border: solid 1px black; background-color: bisque;">
+
+
+            <thead>
+                <tr>
+                    <th width="100">First Name</th>
+                    <th width="100">Last Name</th>
+                    <th width="150">Email</th>
+                    <th with="100">Account Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="first"></td>
+                    <td id="last"></td>
+                    <td id="userEmail"></td>
+                    <td id="accountPassword"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <div>To update your information, fill in the fields below:</div>
+
+		<form name="employeeInfoUpdate" onsubmit="submitUpdate(event.preventDefault())">
+
+			<div class="form-group">
+				<label for="empFirstName">First Name</label>
+
+				<input type="text" class="form-control" name="empFirstName" id="empFirstName"
+					placeholder="Enter your first name:">
+			</div>
+
+			<div class="form-group">
+				<label for="empLastName">Last Name</label>
+
+				<input type="text" class="form-control" name="empLastName"
+					id="empLastName" placeholder="Enter your last name:">
+			</div>
+			
+			<div class="form-group">
+				<label for="empEmail">Email</label>
+
+				<input type="text" class="form-control" name="empEmail"
+					id="empEmail" placeholder="Enter your email address:">
+			</div>
+
+            <div class="form-group">
+				<label for="accPassword">Password</label>
+
+				<input type="text" class="form-control" name="accPassword"
+					id="accPassword" placeholder="Enter your desired password:">
+			</div>
+			
+			
+			<div id="warningText"></div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+
+	</div>
+
+
+
+
+
+    </main>
+
+    <script>
+        var myUser = JSON.parse(sessionStorage.getItem('userInformation'));
+
+        first.innerHTML = "&nbsp; &nbsp; &nbsp;" + myUser.firstName;
+        last.innerHTML = "&nbsp; &nbsp; &nbsp; " + myUser.lastName;
+        userEmail.innerHTML = myUser.email;
+        accountPassword.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + myUser.password;
+
+    </script>
+
+<script src="scripts/index.js"></script>
+
+</body>
+</html>

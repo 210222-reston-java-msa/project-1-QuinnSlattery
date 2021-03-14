@@ -1,0 +1,90 @@
+2021-03-12 13:15:39 WARN  ConnectionUtil:47 - unable to obtain a connection to the database
+2021-03-12 13:15:39 INFO  ConnectionUtil:55 - connected to db
+2021-03-12 13:23:51 WARN  ConnectionUtil:38 - CANNOT LOCATE THE APPLICATION.PROPERTIES FILE.
+2021-03-12 13:24:31 WARN  ConnectionUtil:38 - CANNOT LOCATE THE APPLICATION.PROPERTIES FILE.
+2021-03-12 13:28:48 INFO  ConnectionUtil:43 - connection successful
+2021-03-12 13:28:48 INFO  ConnectionUtil:53 - connected to db
+2021-03-13 15:59:34 INFO  ConnectionUtil:43 - connection successful
+2021-03-13 15:59:34 INFO  ConnectionUtil:53 - connected to db
+2021-03-13 15:59:34 WARN  EmployeeDAOImpl:85 - Unable to insert reimbursement
+org.postgresql.util.PSQLException: No value specified for parameter 3.
+	at org.postgresql.core.v3.SimpleParameterList.checkAllParametersSet(SimpleParameterList.java:264)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:294)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:147)
+	at repositories.EmployeeDAOImpl.insertReimb(EmployeeDAOImpl.java:80)
+	at repositories.Test.main(Test.java:13)
+2021-03-13 16:06:32 INFO  ConnectionUtil:43 - connection successful
+2021-03-13 16:06:32 INFO  ConnectionUtil:53 - connected to db
+2021-03-13 18:05:53 INFO  ConnectionUtil:43 - connection successful
+2021-03-13 18:05:53 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 11:37:39 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 11:37:39 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 11:37:39 WARN  EmployeeDAOImpl:90 - Unable to retrieve reimbursements
+org.postgresql.util.PSQLException: ERROR: column "username" does not exist
+  Position: 35
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at repositories.EmployeeDAOImpl.findUserReimbursements(EmployeeDAOImpl.java:72)
+	at repositories.Test.main(Test.java:15)
+2021-03-14 11:38:23 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 11:38:23 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 11:38:23 WARN  EmployeeDAOImpl:90 - Unable to retrieve reimbursements
+org.postgresql.util.PSQLException: The column name type_id was not found in this ResultSet.
+	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:2607)
+	at org.postgresql.jdbc.PgResultSet.getInt(PgResultSet.java:2498)
+	at repositories.EmployeeDAOImpl.findUserReimbursements(EmployeeDAOImpl.java:83)
+	at repositories.Test.main(Test.java:15)
+2021-03-14 11:38:54 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 11:38:54 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 14:28:25 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 14:28:25 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 14:28:43 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 14:28:43 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 14:58:43 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 14:58:43 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:21:53 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:21:53 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:22:27 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:22:27 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:33:35 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:33:35 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:33:35 WARN  EmployeeDAOImpl:163 - Unable to retrieve reimbursements
+org.postgresql.util.PSQLException: ERROR: syntax error at or near ","
+  Position: 54
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at repositories.EmployeeDAOImpl.resolvedReimbursements(EmployeeDAOImpl.java:144)
+	at repositories.Test.main(Test.java:15)
+2021-03-14 15:33:59 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:33:59 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:33:59 WARN  EmployeeDAOImpl:163 - Unable to retrieve reimbursements
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "reimb_status_id"
+  Position: 55
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2505)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2241)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:310)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:447)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:368)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:158)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:108)
+	at repositories.EmployeeDAOImpl.resolvedReimbursements(EmployeeDAOImpl.java:144)
+	at repositories.Test.main(Test.java:15)
+2021-03-14 15:35:03 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:35:03 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 15:36:26 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 15:36:26 INFO  ConnectionUtil:53 - connected to db
+2021-03-14 16:27:59 INFO  ConnectionUtil:43 - connection successful
+2021-03-14 16:27:59 INFO  ConnectionUtil:53 - connected to db

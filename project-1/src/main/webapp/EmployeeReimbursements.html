@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Reimbursements</title>
+</head>
+<body>
+
+    
+    <table id="myTable" style="border: solid 1px black; background-color: bisque;">
+
+
+        <thead>
+            <tr>
+                <th width="150">Reimbursement ID</th>
+                <th width="150">Amount in $</th>
+                <th width="150">Time Submitted</th>
+                <th width="150">Time Resolved</th>
+                <th width="150">Description</th>
+                <th width="250">Reimbursement Author</th>
+                <th width="250">Reimbursement Resolver</th>
+                <th width="150">Status ID</th>
+                <th width="150">Type ID</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+   
+ <script>
+     var table = document.getElementById('myTable');
+
+     var theArray = JSON.parse(sessionStorage.getItem('reimbArray'));
+
+     var length = theArray.length;
+     var i=1;
+
+     console.log(theArray[1]);
+
+    for(i=0; i < length; i++) {
+        var row = table.insertRow(i+1);
+            
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].reimbId;
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].amount;
+        var cell3 = row.insertCell(2);
+        cell3.innerHTML = "&nbsp; " + theArray[i].submitted;
+        var cell4 = row.insertCell(3);
+        cell4.innerHTML = theArray[i].resolved;
+        var cell5 = row.insertCell(4);
+        cell5.innerHTML = "&nbsp; &nbsp; &nbsp;" + theArray[i].description;
+        var cell6 = row.insertCell(5);
+        cell6.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].author;
+        var cell7 = row.insertCell(6);
+        cell7.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].resolver;
+        var cell8 = row.insertCell(7);
+        cell8.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].statusId;
+        var cell9 = row.insertCell(8);
+        cell9.innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + theArray[i].typeId;
+        
+
+        }
+ </script>
+
+<script src="scripts/index.js"></script>
+
+</body>
+</html>
