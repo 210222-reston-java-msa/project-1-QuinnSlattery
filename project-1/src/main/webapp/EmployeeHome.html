@@ -58,19 +58,22 @@
 
 
 		</form>
+		<br />
+		<br />
+
 
 	</div>
 
 	<div>
 		<p>Click here to view and/or update your personal information:</p>
 		<input id="clickMe" type="button" value="Employee Info Page"
-			onclick="employeeInfo();" /> <br />
+			onclick="employeeInfo();" /> <br />	<br /> <br />
 	</div>
 
 	<div>
 		<p>Click here to view your reimbursements:</p>
 		<input id="clickMe" type="button" value="Employee Reimbursements"
-			onclick="employeeReimbursements();" /> <br />
+			onclick="employeeReimbursements();" /> <br /> <br /> <br />
 	</div>
 	
 	<script>
@@ -94,7 +97,7 @@
 
 			console.log(myUser);
 
-			welcome.innerHTML = "Welcome Employee" + myUser.username;
+			welcome.innerHTML = "Welcome User " + myUser.username;
 			
 		//}
 		

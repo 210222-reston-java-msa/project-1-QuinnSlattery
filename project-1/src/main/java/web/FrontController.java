@@ -10,10 +10,6 @@ import org.apache.log4j.Logger;
 
 import util.RequestHelper;
 
-
-
-
-
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

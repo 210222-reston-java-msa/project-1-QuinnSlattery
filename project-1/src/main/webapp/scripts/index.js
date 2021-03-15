@@ -62,11 +62,12 @@ function submitRequestChange() {
     let reimbStatusId = document.getElementById('statusId').value;
 
     var theResolver = JSON.parse(sessionStorage.getItem('currentUser'));
+    var theResolverUsername = theResolver.username;
 
     let changeTemplate = {
         reimbId: reimbursementId,
         statusId: reimbStatusId,
-        resolver: theResolver
+        resolver: theResolverUsername
     }
 
     let xhr = new XMLHttpRequest();
